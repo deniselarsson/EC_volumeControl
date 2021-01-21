@@ -64,14 +64,10 @@ export default function VolumeControl({min, max, startVolume, step}) {
 
     function switchStyle(){
 
-        const ratio = (volume - min) /(max - min) //0-1
-        const degress = -120 + Math.round(240 * ratio) //-120 => + 120
+        const ratio = (volume - min) /(max - min) 
+        const degress = -120 + Math.round(240 * ratio) 
 
         return {
-
-            
-            // backgroundColor: "lime",
-            // border: "solid 3px",
             transform: `rotate(${degress}deg)`
 
         }
