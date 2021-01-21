@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import HelloWorld01 from './hello/HelloWorld01';
 import HelloWorld02 from './hello/HelloWorld02';
+import VolymeControl from './volymecontrol/VolumeControl';
 //import './index.css';
 //import App from './App';
 //import reportWebVitals from './reportWebVitals';
@@ -9,11 +10,15 @@ import HelloWorld02 from './hello/HelloWorld02';
 const app = 
 
 <div>
+    <VolymeControl />
+</div>
+
+{/* <div>
     <h1>Hello</h1>
     <HelloWorld01 />
     <HelloWorld01 />
     <HelloWorld02 />
-</div>
+</div> */}
 
 
 
