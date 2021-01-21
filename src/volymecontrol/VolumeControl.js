@@ -92,12 +92,14 @@ export default function VolumeControl({min, max, startVolume, step}) {
             <input readOnly value={step}/>
             <div className="dim">{max}</div>
 
+            <div>
+            <button onClick={down}>&lt;</button>
+            </div>
             <div></div>
-            <div>{volume}</div>
-            <div></div>
-
+            <div>
+            <button onClick={up}>&gt;</button>
+            </div>
             
-
         </div>
     )
 }
