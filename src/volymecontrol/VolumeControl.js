@@ -8,12 +8,7 @@ function stringIsWholeNumber(s) {
 
 export default function VolumeControl({min, max, startVolume, step}) {
 
-    //let [volume, setVolume] = useState(50) // 
     let [volume, setVolume] = useState(startVolume) 
-
-    // const min = 0
-    // const max = 100
-    // const step = 5
 
     function tryChangeVolumeTo(v) {
 
