@@ -27,6 +27,13 @@ export default function VolumeControl({min, max, startVolume, step}) {
         tryChangeVolumeTo(min)
     }
 
+    function downTwo() {
+        tryChangeVolumeTo(volume - step - step)
+    }
+
+    function upTwo() {
+        tryChangeVolumeTo(volume + step + step)
+    }
     function down() {
         tryChangeVolumeTo(volume - step)
     }
@@ -88,11 +95,11 @@ export default function VolumeControl({min, max, startVolume, step}) {
             <div className="dim">{max}</div>
 
             <div>
-            <button onClick={down}>&lt;</button>
+            <button onClick={downTwo}>&lt;</button>
             </div>
             <div></div>
             <div>
-            <button onClick={up}>&gt;</button>
+            <button onClick={upTwo}>&gt;</button>
             </div>
             
         </div>
