@@ -7,7 +7,8 @@ import VolymeControl from './volymecontrol/VolumeControl';
 const app = 
 
 <div>
-    <VolymeControl />
+    <VolymeControl min={0} max={100} startVolume={50} step={5}/> 
+    <VolymeControl min={20} max={30} startVolume={25} step={1}/> 
 </div>
 
 

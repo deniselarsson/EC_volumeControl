@@ -6,12 +6,14 @@ function stringIsWholeNumber(s) {
     return /^-?\d+$/.test(s.trim())
 }
 
-export default function VolumeControl() {
+export default function VolumeControl({min, max, startVolume, step}) {
 
-    let [volume, setVolume] = useState(50) // "React Hooks"
+    //let [volume, setVolume] = useState(50) // 
+    let [volume, setVolume] = useState(startVolume) 
 
-    const min = 0
-    const max = 100
+    // const min = 0
+    // const max = 100
+    // const step = 5
 
     function tryChangeVolumeTo(v) {
 
@@ -31,11 +33,11 @@ export default function VolumeControl() {
     }
 
     function down() {
-        tryChangeVolumeTo(volume - 1)
+        tryChangeVolumeTo(volume - step)
     }
 
     function up() {
-        tryChangeVolumeTo(volume + 1)
+        tryChangeVolumeTo(volume + step)
     }
 
     function setMax() {
@@ -53,14 +55,26 @@ export default function VolumeControl() {
 
         console.log("volumeChanged", inputedText)
     }
-    return (
 
+    function switchStyle(){
+
+        const ratio = (volume - min) /(max - min) //0-1
+        const degress = -120 + Math.round(240 * ratio) //-120 => + 120
+
+        return {
+
+            // backgroundColor: "lime",
+            // border: "solid 3px",
+            transform: `rotate(${degress}deg)`
+        }
+    }
+    return (
 
         <div className="wrap">
 
             <div></div>
             <div className="rotaryswitchPlugin light">
-                <div className="switch"></div>
+                <div className="switch" style={switchStyle()}></div>
             </div>
             <div></div>
 
@@ -75,12 +89,14 @@ export default function VolumeControl() {
             </div>
 
             <div className="dim">{min}</div>
-            <input readOnly />
+            <input readOnly value={step}/>
             <div className="dim">{max}</div>
 
             <div></div>
             <div>{volume}</div>
             <div></div>
+
+            
 
         </div>
     )
