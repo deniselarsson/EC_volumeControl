@@ -21,7 +21,9 @@ export default function VolumeControl({min, max, startVolume, step}) {
         }
 
         setVolume(v)
+     
     }
+
     function setMin() {
 
         tryChangeVolumeTo(min)
@@ -56,6 +58,8 @@ export default function VolumeControl({min, max, startVolume, step}) {
         tryChangeVolumeTo(parseInt(inputedText))
 
         console.log("volumeChanged", inputedText)
+
+
     }
 
     function switchStyle(){
@@ -65,9 +69,27 @@ export default function VolumeControl({min, max, startVolume, step}) {
 
         return {
 
+            
             // backgroundColor: "lime",
             // border: "solid 3px",
             transform: `rotate(${degress}deg)`
+
+        }
+    }
+
+    function changeToGreenMax(){
+        if (max === volume){
+            return{
+                color: "lime"
+            }
+        }
+    }
+
+    function changeToGreenMin(){
+        if (min === volume){
+            return{
+                color: "lime"
+            }
         }
     }
     return (
@@ -87,12 +109,12 @@ export default function VolumeControl({min, max, startVolume, step}) {
             <input onChange={volumeChanged} value={volume} />
             <div>
                 <button onClick={up}>&gt;</button>
-                <button onClick={setMax}>&gt;&gt;</button>
+                <button onClick={setMax}>&gt;&gt;</button> 
             </div>
 
-            <div className="dim">{min}</div>
+            <div className="dim" style={changeToGreenMin()}>{min}</div>
             <input readOnly value={step}/>
-            <div className="dim">{max}</div>
+            <div className="dim"style={changeToGreenMax()}>{max}</div>
 
             <div>
             <button onClick={downTwo}>&lt;</button>
