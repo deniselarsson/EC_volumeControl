@@ -1,0 +1,56 @@
+
+.rotaryswitchPlugin {
+  position: relative;
+  width: 51px;
+  height: 51px;
+  cursor: pointer;
+  background: url(darkSmallBackground.png) no-repeat;
+}
+
+.rotaryswitchPlugin .switch {
+  width: 100%;
+  height: 100%;
+  background: url(darkSmallFront.png) no-repeat;
+}
+
+.rotaryswitchPlugin .mark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -1px 0 0 0;
+  width: 1px;
+  height: 3px;
+  background-color: #0e0e0e;
+}
+
+.wrap {
+  border:solid 1px #8a8a8a;
+  border-radius: 10px;
+  background: #e8e8e8;
+  width:min-content;
+  padding:20px;
+  display: grid; 
+  gap: 10px;
+  grid-template-columns: 100px 100px 100px;
+  margin:20px;
+}
+
+
+.wrap *{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.wrap button {
+  width:32px
+}
+
+.wrap > div, .wrap >button {
+  justify-self: center;
+}
+
+.wrap input {
+  text-align: center;
+}
+
+.wrap .dim {
+  opacity: 0.3;
+}
